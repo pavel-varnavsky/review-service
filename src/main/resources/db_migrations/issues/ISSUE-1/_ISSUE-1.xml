@@ -4,8 +4,13 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
-    <changeSet id="TASK-1-001-create_schema" author="PV">
-        <cre
+    <changeSet id="001-TASK-1-create_table_review" author="PV">
+        <sqlFile path="001-TASK-1-create_table_review.sql" relativeToChangelogFile="true" splitStatements="true"
+                 endDelimiter=";"/>
+    </changeSet>
+    <changeSet id="002-TASK-1-seed_initial_data" author="PV">
+        <sqlFile path="002-TASK-1-seed_initial_data.sql" relativeToChangelogFile="true" splitStatements="true"
+                 endDelimiter=";"/>
     </changeSet>
 
 </databaseChangeLog>

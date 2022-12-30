@@ -1,13 +1,13 @@
-package me.varnavsky.productreviewservice.controller;
+package me.varnavsky.review_service.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import me.varnavsky.productreviewservice.facade.ReviewFacade;
-import me.varnavsky.productreviewservice.model.ResponseWrapper;
-import me.varnavsky.productreviewservice.model.review.ReviewCreateDto;
-import me.varnavsky.productreviewservice.model.review.ProductReviewDto;
-import me.varnavsky.productreviewservice.model.review.ReviewDto;
+import me.varnavsky.review_service.facade.ReviewFacade;
+import me.varnavsky.review_service.model.ResponseWrapper;
+import me.varnavsky.review_service.model.review.ReviewCreateDto;
+import me.varnavsky.review_service.model.review.ProductReviewDto;
+import me.varnavsky.review_service.model.review.ReviewDto;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -54,12 +54,10 @@ public class ReviewController {
   /**
    * Create product review.
    *
-   * <p>Status = 200 means success.
-   *
    * @param productId Product id
-   * @return void
+   * @return Id for created entity
    */
-  @PostMapping("/{productId}")
+  @PostMapping("/product/{productId}")
   @Operation(summary = "Create new product review")
   public ResponseWrapper<Long> createProductReview(
       @PathVariable String productId, @RequestBody ReviewCreateDto reviewCreateDto) {
@@ -75,7 +73,7 @@ public class ReviewController {
    * @param reviewId Review id
    * @return void
    */
-  @PutMapping("/{productId}/{reviewId}")
+  @PutMapping("/{reviewId}/{productId}")
   @Operation(summary = "Update product review")
   public ResponseWrapper<Void> editProductReview(
       @PathVariable String productId,
@@ -94,9 +92,9 @@ public class ReviewController {
    * @param reviewId Review id
    * @return void
    */
-  @DeleteMapping("/{productId}/{reviewId}")
+  @DeleteMapping("/{reviewId}/{productId}")
   @Operation(summary = "Delete product review")
-  public ResponseWrapper<Void> getProduct(
+  public ResponseWrapper<Void> deleteProduct(
       @PathVariable String productId, @PathVariable Long reviewId) {
     facade.deleteReview(reviewId, productId);
     return ResponseWrapper.of(null);

@@ -1,10 +1,10 @@
-package me.varnavsky.productreviewservice.service;
+package me.varnavsky.review_service.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import me.varnavsky.productreviewservice.jpa.entity.ReviewEntity;
-import me.varnavsky.productreviewservice.jpa.repository.ReviewRepository;
-import me.varnavsky.productreviewservice.model.review.ReviewCreateDto;
+import me.varnavsky.review_service.jpa.entity.ReviewEntity;
+import me.varnavsky.review_service.jpa.repository.ReviewRepository;
+import me.varnavsky.review_service.model.review.ReviewCreateDto;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

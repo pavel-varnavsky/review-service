@@ -1,4 +1,4 @@
-package me.varnavsky.productreviewservice.config;
+package me.varnavsky.review_service.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

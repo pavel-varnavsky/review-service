@@ -1,5 +1,5 @@
 
-package me.varnavsky.productreviewservice.model.review;
+package me.varnavsky.review_service.model.review;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

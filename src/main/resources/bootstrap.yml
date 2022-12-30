@@ -1,1 +1,19 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: review-service
+  security:
+    user:
+      name: user
+      password: user
+      roles: USER
+  datasource:
+    url: jdbc:postgresql://localhost:5432/br
+    username: br
+    password: br
 
+
+  liquibase:
+    change-log: classpath:db_migrations/migrations.xml
+    liquibase-schema: product

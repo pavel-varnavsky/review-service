@@ -1,11 +1,10 @@
-package me.varnavsky.productreviewservice.jpa.entity;
+package me.varnavsky.review_service.jpa.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.Generated;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,4 +1,4 @@
-package me.varnavsky.productreviewservice;
+package me.varnavsky.review_service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;

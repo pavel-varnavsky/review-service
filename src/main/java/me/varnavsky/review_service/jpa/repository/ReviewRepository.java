@@ -1,6 +1,6 @@
-package me.varnavsky.productreviewservice.jpa.repository;
+package me.varnavsky.review_service.jpa.repository;
 
-import me.varnavsky.productreviewservice.jpa.entity.ReviewEntity;
+import me.varnavsky.review_service.jpa.entity.ReviewEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

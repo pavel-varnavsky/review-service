@@ -1,4 +1,4 @@
-package me.varnavsky.productreviewservice.config;
+package me.varnavsky.review_service.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,11 +41,11 @@ public class SecurityConfiguration {
   }
 
   /**
-   * Security filter.
-   * I can't make it works for GET method without auth, so all method are locked with basic authentication.
+   * Security filter. I can't make it works for GET method without auth, so all methods are locked
+   * with basic authentication.
    *
    * @param http HttpSecurity
-   * @return Filtre chain
+   * @return Filter chain
    * @throws Exception Any exception
    */
   @Bean

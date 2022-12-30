@@ -1,12 +1,10 @@
-package me.varnavsky.productreviewservice.model.review;
+package me.varnavsky.review_service.model.review;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.math.BigDecimal;
 
 @Builder
 @NoArgsConstructor

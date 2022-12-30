@@ -1,4 +1,4 @@
-package me.varnavsky.productreviewservice;
+package me.varnavsky.review_service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

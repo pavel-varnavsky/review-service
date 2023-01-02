@@ -17,7 +17,6 @@ import org.springframework.security.test.web.servlet.request.SecurityMockMvcRequ
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.math.BigDecimal;
 import java.util.Random;
 
 import static org.mockito.ArgumentMatchers.*;
@@ -99,14 +98,14 @@ class ReviewControllerTest {
     Long reviewId = 999L;
     doNothing().when(reviewFacade).editReview(eq(reviewId), eq(productId), any());
     mockMvc
-            .perform(
-                    put("/review/" + reviewId + "/" + productId)
-                            .content("{\"score\": 1}")
-                            .accept(MediaType.APPLICATION_JSON + ";charset=utf-8")
-                            .contentType(MediaType.APPLICATION_JSON + ";charset=utf-8")
-                            .with(SecurityMockMvcRequestPostProcessors.httpBasic("user", "user")))
-            .andDo(print())
-            .andExpect(status().isOk());
+        .perform(
+            put("/review/" + reviewId + "/" + productId)
+                .content("{\"score\": 1}")
+                .accept(MediaType.APPLICATION_JSON + ";charset=utf-8")
+                .contentType(MediaType.APPLICATION_JSON + ";charset=utf-8")
+                .with(SecurityMockMvcRequestPostProcessors.httpBasic("user", "user")))
+        .andDo(print())
+        .andExpect(status().isOk());
   }
 
   @Test
@@ -116,20 +115,20 @@ class ReviewControllerTest {
     Long reviewId = 999L;
     doNothing().when(reviewFacade).deleteReview(eq(reviewId), eq(productId));
     mockMvc
-            .perform(
-                    delete("/review/" + reviewId + "/" + productId)
-                            .accept(MediaType.APPLICATION_JSON + ";charset=utf-8")
-                            .contentType(MediaType.APPLICATION_JSON + ";charset=utf-8")
-                            .with(SecurityMockMvcRequestPostProcessors.httpBasic("user", "user")))
-            .andDo(print())
-            .andExpect(status().isOk());
+        .perform(
+            delete("/review/" + reviewId + "/" + productId)
+                .accept(MediaType.APPLICATION_JSON + ";charset=utf-8")
+                .contentType(MediaType.APPLICATION_JSON + ";charset=utf-8")
+                .with(SecurityMockMvcRequestPostProcessors.httpBasic("user", "user")))
+        .andDo(print())
+        .andExpect(status().isOk());
   }
 
   private ProductReviewDto getProductReviewDto(String productId) {
     return ProductReviewDto.builder()
         .productId(productId)
-        .reviewCount(5)
-        .reviewAverageScore(BigDecimal.valueOf(2.73))
+        .reviewCount(5L)
+        .reviewAverageScore(2.73)
         .build();
   }
 

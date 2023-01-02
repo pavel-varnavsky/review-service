@@ -4,9 +4,10 @@ import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import me.varnavsky.review_service.facade.ReviewFacade;
+import me.varnavsky.review_service.jpa.entity.ReviewEntity;
 import me.varnavsky.review_service.model.ResponseWrapper;
-import me.varnavsky.review_service.model.review.ReviewCreateDto;
 import me.varnavsky.review_service.model.review.ProductReviewDto;
+import me.varnavsky.review_service.model.review.ReviewCreateDto;
 import me.varnavsky.review_service.model.review.ReviewDto;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 import static org.springframework.http.MediaType.*;
 
@@ -37,6 +40,17 @@ public class ReviewController {
   @Operation(summary = "Get product review data: score average value and count")
   public ResponseWrapper<ProductReviewDto> getProductReview(@PathVariable String productId) {
     return ResponseWrapper.of(facade.getProductReview(productId));
+  }
+
+  /**
+   * List all reviews.
+   *
+   * @return List if ReviewEntity
+   */
+  @GetMapping("")
+  @Operation(summary = "List all reviews")
+  public ResponseWrapper<List<ReviewEntity>> list() {
+    return ResponseWrapper.of(facade.list());
   }
 
   /**
